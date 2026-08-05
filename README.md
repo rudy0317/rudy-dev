@@ -3,20 +3,21 @@
 [![Live Demo](https://img.shields.io/badge/Live_Portfolio-00F3FF?style=for-the-badge&logo=github&logoColor=black)](https://rudy0317.github.io/rudy-dev/)
 [![Stack](https://img.shields.io/badge/Stack-Laravel_%7C_React_%7C_Docker_%7C_FTTH_%7C_MikroTik-00FF9D?style=for-the-badge)](#-tech-stack)
 
-> **Infrastructure-Aware Developer** yang menghubungkan keandalan jaringan lapangan dengan eksekusi software modern. Pengalaman dari *fiber optic splicing 600 core PLN*, penanganan insiden *FTTH (ODP/ODC/FTM)*, hingga pembangunan web app internal di *Telkom Akses*.
+> **Infrastructure-Aware Developer** yang menghubungkan keandalan jaringan lapangan dengan eksekusi software modern. Pengalaman dari *1000+ Core Fiber Optic Splicing*, penanganan insiden *FTTH (ODP/ODC/FTM)*, hingga pembangunan web app internal di *Telkom Akses*.
 
 ---
 
 ## 🛠️ Tech Stack & Competencies
 
 ### **Fullstack & DevOps**
-- **Backend & Web**: Laravel (PHP), CodeIgniter, Python, Node.js
-- **Frontend**: React, Modern Vanilla JS, HTML5, Tactical Cyberpunk CSS Architecture
+- **Backend & Web**: Laravel 11-13 (PHP), CodeIgniter, Python, RESTful APIs
+- **Frontend**: React 19, Modern Vanilla JS, HTML5, Tactical Cyberpunk CSS Architecture
 - **DevOps & Server**: Docker Containerization, Git Workflows, Linux Server Admin
 
 ### **Networking & Infrastructure**
 - **Routing & Switching**: MikroTik RouterOS (VLAN Segmentation, PPPoE, Queue Tree / PCQ Bandwidth Management, QoS)
-- **FTTH Optics**: OLT/ONT Management, Optical Path Isolation (ODP, ODC, FTM), Fiber Optic Splicing (600 Core Core Splicing)
+- **FTTH Optics**: OLT/ONT Management, Optical Path Isolation (ODP ➔ ODC ➔ FTM Topology)
+- **Core Splicing**: **1000+ Core FO Spliced** (PLN Infrastructure & Mass Outage Emergency Recovery)
 - **Protocols**: TCP/IP, Subnetting, Network Issue Isolation & SLA >99% Recovery
 
 ---
@@ -34,9 +35,10 @@
 ## 🎓 Education & Certifications
 
 - **Universitas Islam Kalimantan MAB (Banjarmasin)** — IPK: **3.80 / 4.0** (Sem 1-5)
-- **CCNA** — Introduction to Networks, Switching & Routing, Enterprise Networking (Cisco)
-- **IBM Credentials** — Code Generation & Optimization, Data Classification & Security
-- **Telkom Akses & Fiber Academy** — K3 Basic, Provisioning, Assurance, Fiber Optic Training
+- **Cisco Networking Academy**: CCNA (Introduction, Switching & Routing, Enterprise Automation), Cybersecurity
+- **MikroTik Academy**: MTCNA (In Progress)
+- **IBM Credentials**: Code Generation & Optimization, Data Classification & Security
+- **Telkom Akses & Fiber Academy**: K3 Basic, Provisioning Basic, Assurance Basic, Fiber Optic Training
 
 ---
 
