@@ -6,28 +6,28 @@
     <title>Rudy — Fullstack Developer & Infrastructure Engineer</title>
     <meta name="description" content="Portfolio of Rudy — Fullstack Developer & Infrastructure-Aware Engineer specializing in Laravel, React, CodeIgniter, Python, Telkom Akses Web Apps, DevOps, FTTH, & MikroTik RouterOS.">
     
-    <!-- Distinct, High-Quality Typography (Albert Sans + Syne + Space Mono for code) -->
+    <!-- High-End Developer Typography (Plus Jakarta Sans + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg: #070604;
-            --surface: #12100d;
-            --surface-hover: #1c1915;
-            --border: rgba(226, 184, 102, 0.12);
-            --border-highlight: rgba(226, 184, 102, 0.35);
-            --text-primary: #f7f4ef;
-            --text-secondary: #9e978e;
-            --text-muted: #666057;
-            --accent-gold: #e2b866;
-            --accent-gold-glow: rgba(226, 184, 102, 0.18);
-            --accent-emerald: #3dd68c;
-            --accent-amber: #f59e0b;
-            --font-main: 'Albert Sans', -apple-system, sans-serif;
-            --font-display: 'Syne', sans-serif;
-            --font-mono: 'Space Mono', monospace;
+            --bg: #090a0f;
+            --surface: #10121b;
+            --surface-hover: #171a27;
+            --border: rgba(0, 243, 255, 0.12);
+            --border-highlight: rgba(0, 243, 255, 0.35);
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #484f58;
+            --accent-gold: #00f3ff;
+            --accent-gold-glow: rgba(0, 243, 255, 0.18);
+            --accent-emerald: #00ff9d;
+            --accent-amber: #ffb703;
+            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
             --radius-sm: 6px;
             --radius-md: 12px;
             --radius-lg: 20px;
@@ -50,13 +50,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Subtle Noise Overlay for Lacquer Depth */
+        /* Cyberpunk Tactical Grid Overlay */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(rgba(226, 184, 102, 0.03) 1px, transparent 0);
-            background-size: 24px 24px;
+            background-image: radial-gradient(rgba(0, 243, 255, 0.04) 1px, transparent 0);
+            background-size: 28px 28px;
             pointer-events: none;
             z-index: 1;
         }
@@ -96,17 +96,27 @@
             color: var(--text-primary);
         }
 
+        /* TACTICAL CYBERPUNK HUD ACCENTS */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+
         .brand-logo {
             width: 38px;
             height: 38px;
-            background: linear-gradient(135deg, #2a241b 0%, #12100d 100%);
+            background: rgba(0, 243, 255, 0.08);
             border: 1px solid var(--border-highlight);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: var(--font-display);
-            font-weight: 800;
+            font-family: var(--font-mono);
+            font-weight: 700;
             color: var(--accent-gold);
             font-size: 1.1rem;
             box-shadow: 0 0 15px var(--accent-gold-glow);
@@ -216,15 +226,315 @@
             color: var(--text-secondary);
         }
 
-        @keyframes heroPhotoFadeIn {
+        /* INTERACTIVE TERMINAL WIDGET */
+        .terminal-card {
+            background: #0d0c0a;
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-md);
+            font-family: var(--font-mono);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 20px var(--accent-gold-glow);
+            overflow: hidden;
+            margin-top: 24px;
+        }
+
+        .terminal-header {
+            background: #14120f;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+
+        .terminal-title {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .terminal-body {
+            padding: 16px;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-height: 180px;
+            overflow-y: auto;
+        }
+
+        .terminal-line {
+            margin-bottom: 6px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .prompt-symbol {
+            color: var(--accent-gold);
+            user-select: none;
+        }
+
+        .cmd-text {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .res-text {
+            color: var(--text-secondary);
+        }
+        .res-text.success {
+            color: var(--accent-emerald);
+        }
+
+        /* BENTO GRID SYSTEM */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .bento-col-12 { grid-column: span 12; }
+        .bento-col-8 { grid-column: span 8; }
+        .bento-col-7 { grid-column: span 7; }
+        .bento-col-6 { grid-column: span 6; }
+        .bento-col-5 { grid-column: span 5; }
+        .bento-col-4 { grid-column: span 4; }
+
+        /* CATEGORY FILTER BUTTONS */
+        .filter-btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            padding: 6px 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--surface-hover);
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        /* IMAGE LIGHTBOX MODAL */
+        .lightbox-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(7, 6, 4, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 24px;
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-highlight);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px var(--accent-gold-glow);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px; right: 32px;
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center; justify-content: center;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* ANIMATIONS & REVEALS */
+        @keyframes heroReveal {
             0% {
                 opacity: 0;
-                transform: translateY(20px) scale(0.95);
+                transform: translateY(24px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: translateY(0);
             }
+        }
+
+        .hero-content {
+            animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* PERSONAL STORY SECTION STYLES */
+        .story-wrapper {
+            background: var(--surface);
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-md);
+            padding: 44px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .story-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            max-width: 85ch;
+        }
+
+        .story-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-lead {
+            font-size: 1.35rem !important;
+            color: var(--text-primary) !important;
+            font-weight: 600;
+        }
+
+        .story-text strong {
+            color: var(--accent-gold);
+        }
+
+        .story-text em {
+            color: var(--text-primary);
+            font-style: normal;
+            border-bottom: 1px dashed var(--accent-gold);
+        }
+
+        .story-stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 36px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            padding-left: 16px;
+            border-left: 2px solid var(--border-highlight);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            border-left-color: var(--accent-gold);
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 900px) {
+            .story-wrapper {
+                padding: 28px;
+            }
+            .story-stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        .hero-preview-wrapper {
+            margin-top: 48px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-highlight);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--accent-gold-glow);
+            position: relative;
+        }
+
+        .hero-preview-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            filter: contrast(105%);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-preview-wrapper:hover .hero-preview-img {
+            transform: scale(1.02);
+        }
+
+        .hero-preview-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 24px;
+            background: linear-gradient(0deg, rgba(7,6,4,0.9) 0%, rgba(7,6,4,0) 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .hero-badge {
@@ -421,10 +731,10 @@
         }
 
         .card:hover {
-            border-color: var(--border-highlight);
+            border-color: rgba(0, 243, 255, 0.5);
             transform: translateY(-4px);
             background: var(--surface-hover);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 243, 255, 0.08);
         }
 
         .card-header {
@@ -487,22 +797,22 @@
             border-top: 1px solid var(--border);
         }
 
-        /* CERTS & LISTS */
+        /* CERTS & LISTS - GRID BOX LAYOUT */
         .cert-grid {
             display: grid;
-            gap: 14px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
         }
 
         .cert-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            padding: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
+            gap: 16px;
             transition: var(--transition);
         }
 
@@ -535,6 +845,47 @@
             border: 1px solid rgba(245, 158, 11, 0.3);
         }
 
+        /* SCROLL TO TOP */
+        #scroll-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 42px;
+            height: 42px;
+            background: var(--surface);
+            border: 1px solid var(--border-highlight);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 200;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--accent-gold);
+            pointer-events: none;
+        }
+
+        #scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #scroll-top:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 16px var(--accent-gold-glow);
+        }
+
+        /* ACTIVE NAV LINK */
+        nav a.active {
+            color: var(--accent-gold);
+            background: rgba(0, 243, 255, 0.08);
+        }
+
         /* FOOTER */
         footer {
             padding: 50px 0;
@@ -543,16 +894,34 @@
             font-size: 0.88rem;
         }
 
-        footer a {
-            color: var(--accent-gold);
-            text-decoration: none;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 16px;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
         }
 
         /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .bento-col-7 { grid-column: span 12; }
+            .bento-col-5 { grid-column: span 12; }
+            .bento-col-8 { grid-column: span 12; }
+            .bento-col-4 { grid-column: span 12; }
+        }
+
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr !important;
@@ -561,6 +930,15 @@
             .hero-photo-wrapper {
                 order: -1;
                 margin-bottom: 20px;
+            }
+
+            .story-stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #scroll-top {
+                bottom: 20px;
+                right: 20px;
             }
         }
 
@@ -575,10 +953,16 @@
             nav {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 0.8rem;
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .btn-group {
@@ -587,6 +971,25 @@
 
             .btn {
                 justify-content: center;
+                width: 100%;
+            }
+
+            .bento-col-12, .bento-col-7, .bento-col-5, .bento-col-8, .bento-col-6, .bento-col-4 {
+                grid-column: span 12;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-close {
+                top: 16px; right: 16px;
+                width: 44px; height: 44px;
+            }
+
+            .story-stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
             }
         }
     </style>
@@ -596,10 +999,14 @@
     <header>
         <div class="container header-inner">
             <a href="#" class="brand">
-                <div class="brand-logo">R</div>
-                <div class="brand-text">Rudy <span>// DEV & INFRA</span></div>
+                <div class="brand-logo">&gt;_</div>
+                <div class="brand-text">Rudy <span>// DEV &amp; INFRA</span></div>
             </a>
             <nav>
+                <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(0, 255, 157, 0.08); border: 1px solid rgba(0, 255, 157, 0.25); border-radius: 50px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-emerald); margin-right: 8px;">
+                    <span style="width: 6px; height: 6px; background: var(--accent-emerald); border-radius: 50%; box-shadow: 0 0 6px var(--accent-emerald);"></span>
+                    SYS_ONLINE
+                </div>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#experience">Experience</a>
@@ -683,14 +1090,91 @@
                     </div>
                 </div>
 
-                <!-- PROFILE PHOTO WITH LACQUER FRAME & TRANSIITION -->
-                <div class="hero-photo-wrapper">
+                <!-- PROFILE PHOTO & INTERACTIVE TERMINAL WIDGET -->
+                <div class="hero-photo-wrapper" style="flex-direction: column; gap: 20px;">
                     <div class="hero-photo-frame">
                         <img src="assets/FotoDiri.jpg" alt="Rudy — Fullstack & Infrastructure Engineer" class="hero-photo-img">
                         <div class="photo-overlay-tag">
                             <span>RUDY</span>
                             <small>Fullstack Dev</small>
                         </div>
+                    </div>
+
+                    <!-- LIVE TERMINAL WIDGET -->
+                    <div class="terminal-card" style="width: 100%; max-width: 320px;">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">rudy@infra-node:~</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-content">
+                            <div class="terminal-line">
+                                <span class="prompt-symbol">$</span>
+                                <span class="cmd-text">whoami</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="res-text">&gt; Rudy (Fullstack &amp; Infra)</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt-symbol">$</span>
+                                <span class="cmd-text">check-stack --active</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="res-text success">[OK] Laravel 11 / React 18 / Docker</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="res-text success">[OK] FTTH OLT / MikroTik RouterOS</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt-symbol">$</span>
+                                <span class="cmd-text">ping status.telkomakses</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="res-text success">64 bytes: icmp_seq=1 ttl=64 time=0.8ms (SLA &gt;99%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- PERSONAL STORY & PHILOSOPHY SECTION -->
+        <section id="story" class="scroll-reveal" style="padding: 40px 0 80px 0;">
+            <div class="section-header">
+                <span class="section-tag">// PERSONAL PHILOSOPHY</span>
+                <h2 class="section-title">Bridging Infrastructure & Code</h2>
+            </div>
+
+            <div class="story-wrapper">
+                <div class="story-text">
+                    <p class="story-lead">
+                        Saya <strong>Rudy</strong>, seorang Fullstack Developer dan Infrastructure-Aware Engineer dengan latar belakang kombinasi di bidang pengembangan perangkat lunak dan teknik jaringan lapangan.
+                    </p>
+                    <p>
+                        Pengalaman operasional mencakup pemeliharaan jaringan FTTH (ODP/ODC/FTM), <em>splicing fiber optik 600 core PLN</em>, serta konfigurasi routing <em>MikroTik RouterOS</em> skala kampus dan enterprise.
+                    </p>
+                    <p>
+                        Di Telkom Akses dan berbagai proyek infrastruktur, pemahaman mendalam tentang arsitektur jaringan ini diterapkan untuk membangun aplikasi web internal (Laravel, React, CodeIgniter) yang andal, cepat, dan terintegrasi dengan baik.
+                    </p>
+                </div>
+
+                <div class="story-stats-container">
+                    <div class="stat-item">
+                        <div class="stat-num">3.80</div>
+                        <div class="stat-label">IPK UNISKA MAB (Sem 1-5)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">5+ <span style="font-size: 1.2rem; color: var(--accent-gold);">THN</span></div>
+                        <div class="stat-label">Pengalaman Field & Dev</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">&gt;99<span style="font-size: 1.4rem; color: var(--accent-emerald);">%</span></div>
+                        <div class="stat-label">SLA Network Recovery</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">600</div>
+                        <div class="stat-label">Core FO Splicing Project</div>
                     </div>
                 </div>
             </div>
@@ -782,23 +1266,33 @@
                             <li>Menghubungkan arsitektur jaringan FTTH & routing dengan dashboard monitoring web.</li>
                             <li>Menjaga ketersediaan, performa, dan keandalan sistem aplikasi secara kontinu.</li>
                         </ul>
+                        <div style="margin-top: 14px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border);">
+                            <img src="assets/Telkom Akses/Full Stack/IT Programmer.jpeg" alt="Sertifikat / Evidence IT Programmer Telkom Akses" style="width: 100%; height: 180px; object-fit: cover; display: block; filter: contrast(105%);">
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <a href="assets/Portal_TelkomAkses_Evidence_Rudy_20251004.pdf" target="_blank" class="btn btn-outline btn-sm">EVIDENCE PDF ↗</a>
+                        <a href="assets/Telkom Akses/Full Stack/IT Programmer.jpeg" target="_blank" class="btn btn-outline btn-sm">FULLSTACK EVIDENCE ↗</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Network Engineer - Access / IOAN</h3>
-                        <div class="card-subtitle">PT Upaya Tehnik | Jan 2023 - Present</div>
+                        <div class="card-subtitle">PT Upaya Tehnik | Jan 2023 - Apr 2026</div>
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li>Troubleshooting jaringan FTTH dari titik pelanggan hingga jajaran optik utama (ODP/ODC/FTM).</li>
-                            <li>Verifikasi status koneksi via OLT (ONT, LOS/LOF, VLAN provisioning).</li>
-                            <li>Penanganan emergency outage recovery dengan komitmen SLA &gt; 99%.</li>
+                            <li>Melakukan isolasi gangguan (fault isolation) sebelum dilakukan eskalasi.</li>
+                            <li>Troubleshooting masalah jaringan FTTH dari titik pelanggan hingga jalur optik utama (ODP ➔ ODC ➔ FTM).</li>
+                            <li>Melakukan verifikasi &amp; pengecekan status layanan via OLT (ONT, LOS/LOF, VLAN).</li>
+                            <li>Menangani pemulihan jaringan pada insiden outage dengan menjaga SLA &gt; 99%.</li>
                         </ul>
+                        <div style="margin-top: 14px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border);">
+                            <img src="assets/Upaya Teknik/Evidance.jpeg" alt="Foto Evidence Network Engineer PT Upaya Tehnik" style="width: 100%; height: 180px; object-fit: cover; display: block; filter: contrast(105%);">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="assets/Upaya Teknik/Evidance.jpeg" target="_blank" class="btn btn-outline btn-sm">EVIDENCE PHOTO ↗</a>
                     </div>
                 </div>
 
@@ -809,9 +1303,16 @@
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li>Support pemulihan jaringan pada insiden mass outage.</li>
-                            <li>Audit data dan sinkronisasi topologi optik lapangan dengan sistem database.</li>
+                            <li>Mendukung pemulihan layanan jaringan saat terjadi mass outage.</li>
+                            <li>Melakukan pengecekan data lapangan dan mencocokkan dengan topologi FTTH.</li>
+                            <li>Berkoordinasi dengan tim operasional untuk menjaga kualitas jaringan.</li>
                         </ul>
+                        <div style="margin-top: 14px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border);">
+                            <img src="assets/Upaya Teknik/QE.jpeg" alt="Foto Evidence Quality Engineer PT Upaya Tehnik" style="width: 100%; height: 180px; object-fit: cover; display: block; filter: contrast(105%);">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="assets/Upaya Teknik/QE.jpeg" target="_blank" class="btn btn-outline btn-sm">QE EVIDENCE ↗</a>
                     </div>
                 </div>
 
@@ -822,7 +1323,8 @@
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li>Membantu pemulihan saluran optik dan pengujian kualitas redaman fiber.</li>
+                            <li>Membantu pemulihan layanan jaringan dan pengecekan kualitas saluran optik di lapangan.</li>
+                            <li>Mempelajari proses assurance jaringan FTTH dan alur eskalasi gangguan.</li>
                         </ul>
                     </div>
                     <div class="card-footer">
@@ -836,13 +1338,20 @@
         <section id="projects">
             <div class="section-header">
                 <span class="section-tag">// PORTFOLIO</span>
-                <h2 class="section-title">Key Projects</h2>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="filter-btn-group">
+                    <button class="filter-btn active" onclick="filterProjects('all', this)">ALL PROJECTS</button>
+                    <button class="filter-btn" onclick="filterProjects('network', this)">NETWORKING &amp; MIKROTIK</button>
+                    <button class="filter-btn" onclick="filterProjects('ftth', this)">FTTH &amp; FIBER OPTIC</button>
+                    <button class="filter-btn" onclick="filterProjects('devops', this)">DEVOPS &amp; LAB</button>
+                </div>
             </div>
-            <div class="grid-box">
-                <div class="card">
+            <div class="bento-grid">
+                <!-- Bento Item 1: Campus & Hospital (7 Cols) -->
+                <div class="card bento-col-7" data-category="network">
                     <div class="card-header">
                         <h3 class="card-title">Campus & Hospital Network Deployment</h3>
-                        <div class="card-subtitle">MikroTik & VLAN Architecture</div>
+                        <div class="card-subtitle">Feb 2026 &nbsp;·&nbsp; MikroTik & VLAN Architecture</div>
                     </div>
                     <div class="card-body">
                         <ul>
@@ -850,40 +1359,65 @@
                             <li>Konfigurasi MikroTik RouterOS (VLANs, PPPoE, Bandwidth Management).</li>
                             <li>Integrasi jaringan publik & internal dengan jaminan stabilitas tinggi.</li>
                         </ul>
+                        <div style="margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div style="border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); cursor: pointer;" onclick="openLightbox('assets/Kampus dan Hospital/IKG.jpeg')">
+                                <img src="assets/Kampus dan Hospital/IKG.jpeg" alt="Instalasi & Cabling Kampus / Hospital" style="width: 100%; height: 170px; object-fit: cover; display: block; filter: contrast(105%);">
+                            </div>
+                            <div style="border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); cursor: pointer;" onclick="openLightbox('assets/Kampus dan Hospital/Setting.jpeg')">
+                                <img src="assets/Kampus dan Hospital/Setting.jpeg" alt="Konfigurasi Setting MikroTik Router" style="width: 100%; height: 170px; object-fit: cover; display: block; filter: contrast(105%);">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <a href="assets/Provisioning.pdf" target="_blank" class="btn btn-outline btn-sm">PROVISIONING DOC ↗</a>
+                        <a href="assets/Kampus dan Hospital/IKG.jpeg" target="_blank" class="btn btn-outline btn-sm">CABLING EVIDENCE ↗</a>
+                        <a href="assets/Kampus dan Hospital/Setting.jpeg" target="_blank" class="btn btn-outline btn-sm">CONFIG EVIDENCE ↗</a>
                     </div>
                 </div>
 
-                <div class="card">
+                <!-- Bento Item 2: PLN FO Splicing (5 Cols) -->
+                <div class="card bento-col-5" data-category="ftth">
                     <div class="card-header">
                         <h3 class="card-title">Fiber Optic Splicing — PLN (600 Core)</h3>
-                        <div class="card-subtitle">Infrastructure Core Splicing</div>
+                        <div class="card-subtitle">Des 2025 &nbsp;·&nbsp; Infrastructure Core Splicing</div>
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li>Penyambungan kabel fiber optik 600 Core untuk proyek backbone infrastruktur PLN.</li>
-                            <li>Pengujian tingkat redaman (optical loss testing) untuk memastikan kestabilan sinyal optik.</li>
+                            <li>Melakukan penyambungan kabel fiber optik 600 Core pada proyek infrastruktur PLN.</li>
+                            <li>Memastikan tingkat redaman sinyal optik rendah (low loss) dan koneksi stabil setelah splicing.</li>
+                            <li>Menjaga kontinuitas jaringan selama proses instalasi dan pemeliharaan sesuai standar K3 &amp; teknis.</li>
                         </ul>
+                        <div style="margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div style="border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); cursor: pointer;" onclick="openLightbox('assets/PLN/Evidance.jpg')">
+                                <img src="assets/PLN/Evidance.jpg" alt="Foto Evidence Lapangan Splicing PLN" style="width: 100%; height: 170px; object-fit: cover; display: block; filter: contrast(105%);">
+                            </div>
+                            <div style="border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); cursor: pointer;" onclick="openLightbox('assets/PLN/PLN FO.png')">
+                                <img src="assets/PLN/PLN FO.png" alt="Rekapan Progress Splicing Fiber Optic PLN" style="width: 100%; height: 170px; object-fit: cover; display: block; filter: contrast(105%);">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <a href="assets/Splicing.pdf" target="_blank" class="btn btn-outline btn-sm">SPLICING DOC ↗</a>
+                        <a href="assets/PLN/Evidance.jpg" target="_blank" class="btn btn-outline btn-sm">FIELD EVIDENCE ↗</a>
+                        <a href="assets/PLN/PLN FO.png" target="_blank" class="btn btn-outline btn-sm">FULLSHEET ↗</a>
                     </div>
                 </div>
 
-                <div class="card">
+                <!-- Bento Item 3: Home Lab (12 Cols Full Width) -->
+                <div class="card bento-col-12" data-category="devops">
                     <div class="card-header">
-                        <h3 class="card-title">Home Lab Network Infrastructure</h3>
-                        <div class="card-subtitle">Routing & DevOps Testbed</div>
+                        <h3 class="card-title">Home Lab Network Infrastructure &amp; DevOps Testbed</h3>
+                        <div class="card-subtitle">Apr 2021 - Present &nbsp;·&nbsp; Routing &amp; Fullstack Server Sandbox</div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: center;">
                         <ul>
-                            <li>Lab eksperimen mandiri untuk pengujian VLAN, PPPoE, QoS, & deployment server web (Laravel/React).</li>
+                            <li>Lab eksperimen mandiri untuk pengujian segmentasi VLAN, PPPoE server, QoS bandwidth shaping, dan deployment server web (Laravel/React).</li>
+                            <li>Tempat pengujian skenario fault isolation jaringan FTTH dan integrasi RESTful API internal.</li>
                         </ul>
+                        <div style="border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); cursor: pointer;" onclick="openLightbox('assets/Homelab/Mikrotikjpg.jpg')">
+                            <img src="assets/Homelab/Mikrotikjpg.jpg" alt="Foto Setup MikroTik RouterOS Homelab" style="width: 100%; height: 150px; object-fit: cover; display: block; filter: contrast(105%);">
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <a href="assets/HomeLab_Rudy_20251004.pdf" target="_blank" class="btn btn-outline btn-sm">HOMELAB PDF ↗</a>
+                        <a href="assets/Homelab/Mikrotikjpg.jpg" target="_blank" class="btn btn-outline btn-sm">SETUP PHOTO ↗</a>
                     </div>
                 </div>
             </div>
@@ -953,7 +1487,27 @@
                     </div>
                 </div>
 
-                <!-- Telkom Akses Certifications -->
+                <!-- MTCNA & Fiber Academy -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">MTCNA — MikroTik Certified Network Associate</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">MikroTik Academy</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge progress">IN PROGRESS</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">Fiber Optic Training</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Fiber Academy Telkom</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                    </div>
+                </div>
+
                 <div class="cert-card">
                     <div>
                         <div class="cert-name">K3 Basic & Working at Heights</div>
@@ -967,7 +1521,7 @@
 
                 <div class="cert-card">
                     <div>
-                        <div class="cert-name">FTTH Assurance & Provisioning Basic</div>
+                        <div class="cert-name">FTTH Provisioning Basic</div>
                         <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Telkom Akses</div>
                     </div>
                     <div style="display: flex; gap: 10px; align-items: center;">
@@ -976,7 +1530,73 @@
                     </div>
                 </div>
 
-                <!-- IBM AI & Code Generation -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">FTTH Assurance Basic</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Telkom Akses</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/Telkom Akses/Assurance Basic.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">Service Deploy Technician</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Telkom Akses</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/Telkom Akses/Serivce Deploy Technician.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">IndiHome 3P (Triple Play) Operations</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Telkom Akses</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/Telkom Akses/Indihome 3P.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">Effective Communication & Interpersonal Skills</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Telkom Akses</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/Telkom Akses/Efective Communication & Interpersonal Skill.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">Telkom Akses Certification #87</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Telkom Akses</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/Telkom Akses/87.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">Telkom Akses Certification #90</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">Telkom Akses</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/Telkom Akses/90.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- IBM AI & Data Classification -->
                 <div class="cert-card">
                     <div>
                         <div class="cert-name">Code Generation & Optimization Using IBM</div>
@@ -985,6 +1605,29 @@
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <span class="cert-badge done">VERIFIED</span>
                         <a href="assets/IBM/Credly Code Generation and Optimization Using IBM.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">Data Classification & Security</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">IBM Credly Certification</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/IBM/Data Classification .pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- Network Assurance Cert -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-name">Network Assurance</div>
+                        <div class="card-subtitle" style="font-size: 0.78rem; margin-top: 2px;">PT Upaya Tehnik (Internship)</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="cert-badge done">VERIFIED</span>
+                        <a href="assets/Brevet Assurance.pdf" target="_blank" class="btn btn-outline btn-sm">PDF ↗</a>
                     </div>
                 </div>
 
@@ -1028,14 +1671,86 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
-
     <footer>
         <div class="container">
-            <p>© 2026 Rudy. Designed with Impeccable Standards (Anti-AI-Slop). <a href="https://github.com/rudy0317" target="_blank">GitHub (rudy0317)</a></p>
+            <p>© 2026 Rudy — Fullstack Developer &amp; Infrastructure Engineer.</p>
+            <div class="footer-links">
+                <a href="https://github.com/rudy0317" target="_blank">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/rudyyy" target="_blank">LinkedIn ↗</a>
+                <a href="https://wa.me/6289630078446" target="_blank">WhatsApp ↗</a>
+                <a href="mailto:rudy2310010148@gmail.com">Email ↗</a>
+            </div>
         </div>
     </footer>
 
+    <!-- SCROLL TO TOP BUTTON -->
+    <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+    <!-- LIGHTBOX IMAGE PREVIEW MODAL -->
+    <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Full Preview">
+    </div>
+
+    <script>
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(a => a.classList.remove('active'));
+                    const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => navObserver.observe(s));
+
+        // Scroll-to-top visibility
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        // Category filter
+        function filterProjects(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('[data-category]').forEach(card => {
+                card.style.display = (category === 'all' || card.getAttribute('data-category') === category) ? '' : 'none';
+            });
+        }
+
+        // Lightbox
+        function openLightbox(src) {
+            const modal = document.getElementById('lightbox-modal');
+            document.getElementById('lightbox-img').src = src;
+            modal.classList.add('active');
+        }
+
+        function closeLightbox(e) {
+            if (e.target.id === 'lightbox-modal' || e.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox-modal').classList.remove('active');
+            }
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') document.getElementById('lightbox-modal').classList.remove('active');
+        });
+    </script>
 </body>
 </html>
