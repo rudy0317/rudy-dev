@@ -761,11 +761,11 @@ export const App: React.FC = () => {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ padding: '40px 0', borderTop: '1px solid var(--border)', background: 'var(--surface)' }}>
+      <footer style={{ padding: '32px 0', borderTop: '1px solid var(--border)', background: 'var(--surface)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700 }}>RUDY — Fullstack & Infra Engineer</div>
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Built with React, Framer Motion & Vite.</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-primary)' }}>RUDY — Fullstack & Infra Engineer</div>
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginTop: '4px' }}>2026 &copy; Rudy</div>
           </div>
 
           <div style={{ display: 'flex', gap: '16px' }}>
