@@ -67,6 +67,8 @@ export interface PortfolioData {
   };
 }
 
+import fotoDiriImg from '../../assets/FotoDiri.jpg';
+
 export const PORTFOLIO_DATA: PortfolioData = {
   labels: {
     about: "About",
@@ -92,7 +94,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     email: "rudy2310010148@gmail.com",
     github: "https://github.com/rudy0317",
     linkedin: "https://www.linkedin.com/in/rudyyy",
-    photo: "assets/FotoDiri.jpg",
+    photo: fotoDiriImg,
     summary: "I am Rudy, a Fullstack Developer and Infrastructure-Aware Engineer combining software development expertise with hands-on field network engineering. Operational experience spans FTTH access network maintenance (ODP/ODC/FTM), 600-core PLN fiber optic fusion splicing, and enterprise MikroTik RouterOS routing. At Telkom Akses and across various infrastructure initiatives, this deep network domain knowledge is leveraged to architect robust, high-performance web applications (Laravel, React, CodeIgniter) seamlessly integrated with core infrastructure."
   },
   stats: [
