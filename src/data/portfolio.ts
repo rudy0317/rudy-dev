@@ -35,7 +35,7 @@ export interface PortfolioData {
   groupedCertifications: {
     category: string;
     color: string;
-    certs: { name: string; pdf?: string; image?: string }[];
+    certs: { name: string; pdf: string }[];
   }[];
   skills: {
     webDev: string[];
