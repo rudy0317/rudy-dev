@@ -35,7 +35,7 @@ export interface PortfolioData {
   groupedCertifications: {
     category: string;
     color: string;
-    certs: { name: string; pdf: string }[];
+    certs: { name: string; pdf?: string; image?: string }[];
   }[];
   skills: {
     webDev: string[];
@@ -114,7 +114,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Handle server deployment, environment configuration, and infrastructure management.",
         "Bridge FTTH network systems & routing architectures with web-based internal tools.",
         "Ensure application performance, high stability, and seamless system integration."
-      ]
+      ],
+      images: ["assets/Telkom Akses/Full Stack/IT Programmer.jpeg"]
     },
     {
       company: "PT Upaya Tehnik",
