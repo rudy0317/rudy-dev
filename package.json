@@ -1,0 +1,38 @@
+{
+  "name": "rudy-portofolio",
+  "version": "1.0.0",
+  "description": "[![Live Demo](https://img.shields.io/badge/Live_Portfolio-00F3FF?style=for-the-badge&logo=github&logoColor=black)](https://rudy0317.github.io/rudy-dev/) [![Stack](https://img.shields.io/badge/Stack-Laravel_%7C_React_%7C_Docker_%7C_FTTH_%7C_MikroTik-00FF9D?style=for-the-badge)](#-tech-stack)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rudy0317/rudy-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rudy0317/rudy-dev/issues"
+  },
+  "homepage": "https://github.com/rudy0317/rudy-dev#readme",
+  "dependencies": {
+    "framer-motion": "^13.0.0",
+    "lucide-react": "^1.30.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "gh-pages": "^6.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1"
+  }
+}

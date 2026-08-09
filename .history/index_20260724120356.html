@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudy - Network Engineer & Fullstack Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Mono', monospace;
+        }
+
+        body {
+            background-color: #f4f4f0;
+            color: #0d0d0d;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 3px solid #0d0d0d;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: #ffcc00;
+            padding: 5px 10px;
+            border: 3px solid #0d0d0d;
+            box-shadow: 3px 3px 0px #0d0d0d;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d0d0d;
+            font-weight: 700;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 60px 0;
+            border-bottom: 3px solid #0d0d0d;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background-color: #ff3333;
+            color: #fff;
+            padding: 0 10px;
+            display: inline-block;
+            border: 3px solid #0d0d0d;
+            box-shadow: 5px 5px 0px #0d0d0d;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: #00ff66;
+            color: #0d0d0d;
+            padding: 12px 24px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 3px solid #0d0d0d;
+            box-shadow: 4px 4px 0px #0d0d0d;
+            transition: all 0.1s ease;
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+        }
+
+        .btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #0d0d0d;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 40px 0;
+            border-bottom: 3px solid #0d0d0d;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: #00ffff;
+            display: inline-block;
+            padding: 2px 8px;
+            border: 2px solid #0d0d0d;
+        }
+
+        .grid-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border: 3px solid #0d0d0d;
+            box-shadow: 4px 4px 0px #0d0d0d;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card ul {
+            list-style-type: square;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        .card li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">RUDY.DEV</div>
+        <nav>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1>NETWORK ROOTS. <span>FULLSTACK & DEVOPS EXECUTION.</span></h1>
+            <p>I'm Rudy. Bridging core network infrastructure (FTTH, MikroTik) with robust fullstack web development and server operations.</p>
+            <div class="btn-group">
+                <a href="mailto:rudy2310010148@gmail.com" class="btn">CONTACT ME</a>
+                <a href="https://www.linkedin.com/in/rudyyy" target="_blank" class="btn btn-secondary">LINKEDIN ↗</a>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <h2>// TECH & NETWORKING SKILLS</h2>
+            <div class="grid-box">
+                <div class="card">
+                    <h3>Infrastructure & Net</h3>
+                    <ul>
+                        <li>FTTH Systems (OLT, ONT, ODP, ODC)</li>
+                        <li>MikroTik (VLAN, PPPoE, QTree, PCQ)</li>
+                        <li>Routing, Switching, TCP/IP</li>
+                        <li>Fiber Optic Splicing & Testing</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Fullstack & DevOps</h3>
+                    <ul>
+                        <li>Web Development & Architecture</li>
+                        <li>Server Management & Troubleshooting</li>
+                        <li>Fault Isolation & SLA Maintenance</li>
+                        <li>Deployment & System Configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2>// EXPERIENCE & PROJECTS</h2>
+            <div class="grid-box">
+                <div class="card">
+                    <h3>PT Upaya Tehnik</h3>
+                    <p><strong>Network Engineer / QA</strong> (2021 - Present)</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Handling FTTH troubleshooting, OLT service verification, and maintaining network SLA >99%.</p>
+                </div>
+                <div class="card">
+                    <h3>PLN Infrastructure Project</h3>
+                    <p><strong>Fiber Optic Jointer</strong> (Dec 2025)</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Performed fiber jointing for 600-core cable with low signal loss and stable connection standards.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 RUDY. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>

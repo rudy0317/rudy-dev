@@ -1,2 +1,4 @@
-.history/
-cv-rudy.md
+node_modules
+dist
+.DS_Store
+*.local
