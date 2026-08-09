@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Terminal, Cpu, Server, Network, Code, Shield, Menu, X, Mail, Globe, 
-  Layers, Database, Router, Radio, Award, GraduationCap, Briefcase, ExternalLink, Activity
+  Terminal, Server, Code, Shield, Menu, X, Mail, 
+  Layers, Router, Radio, Award, GraduationCap, Briefcase, Activity
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from './data/portfolio';
 
