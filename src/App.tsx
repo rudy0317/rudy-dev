@@ -115,8 +115,8 @@ export const App: React.FC = () => {
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '72px' }}>
           <motion.a 
             href="#"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', color: 'inherit' }}
           >
             <div style={{
@@ -470,8 +470,8 @@ export const App: React.FC = () => {
               {portfolio.experience.map((exp, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   className="glass-panel"
@@ -593,9 +593,9 @@ export const App: React.FC = () => {
                 <motion.div
                   key={proj.title}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 20, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
                   className="glass-panel"
                   style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
@@ -780,8 +780,12 @@ export const App: React.FC = () => {
           {/* Grid Layout Showing All Certificate Categories & Items Upfront */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '24px' }}>
             {portfolio.groupedCertifications.map((group, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
                 className="glass-panel"
                 style={{
                   padding: '24px',
@@ -827,7 +831,7 @@ export const App: React.FC = () => {
                     </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -890,11 +894,30 @@ export const App: React.FC = () => {
               }}
             >
               {lightboxImg.toLowerCase().endsWith('.pdf') ? (
-                <iframe
-                  src={lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}
-                  title="Document Preview"
-                  style={{ width: '100%', height: '100%', border: 'none' }}
-                />
+                <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <object
+                    data={`${lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}#toolbar=0&navpanes=0`}
+                    type="application/pdf"
+                    style={{ width: '100%', height: '100%', flexGrow: 1, border: 'none' }}
+                  >
+                    <iframe
+                      src={`${lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}#toolbar=0`}
+                      title="Document Preview"
+                      style={{ width: '100%', height: '100%', border: 'none' }}
+                    />
+                  </object>
+                  <div style={{ padding: '12px 16px', background: '#0a0a0d', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>PDF Document</span>
+                    <a
+                      href={lightboxImg.startsWith('/') || lightboxImg.startsWith('http') ? lightboxImg : `./${lightboxImg}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ fontSize: '0.85rem', color: 'var(--accent-cyan)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontWeight: 700 }}
+                    >
+                      BUKA DOKUMEN PDF &rarr;
+                    </a>
+                  </div>
+                </div>
               ) : (
                 <img
                   src={lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}
