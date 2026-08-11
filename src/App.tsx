@@ -62,6 +62,39 @@ const TailwindIcon: React.FC<{ size?: number }> = ({ size = 16 }) => (
   </svg>
 );
 
+const CiscoIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = ({ size = 22, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={style}>
+    <path d="M1.328 11.238v3.25h1.272v-3.25zm2.59 1.95v1.3h1.27v-1.3zm2.589-1.95v3.25H7.78v-3.25zm2.59-1.95v5.2h1.27v-5.2zm2.59-1.95v7.15h1.27v-7.15zm2.589 1.95v5.2h1.272v-5.2zm2.59 1.95v3.25h1.27v-3.25zm2.59-1.95v3.25h1.272v-3.25zm2.589 1.95v1.3h1.272v-1.3z" />
+  </svg>
+);
+
+const TelkomIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = ({ size = 22, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style}>
+    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+    <path d="M2 17l10 5 10-5" />
+    <path d="M2 12l10 5 10-5" />
+  </svg>
+);
+
+const IBMIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = ({ size = 22, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={style}>
+    <path d="M0 4.5v1.8h7.2V4.5H0zm9.6 0v1.8h7.2V4.5H9.6zm9.6 0v1.8H24V4.5h-4.8zM0 7.8v1.8h7.2V7.8H0zm9.6 0v1.8h7.2V7.8H9.6zm9.6 0v1.8H24V7.8h-4.8zM0 11.1v1.8h7.2v-1.8H0zm9.6 0v1.8h7.2v-1.8H9.6zm9.6 0v1.8H24v-1.8h-4.8zM0 14.4v1.8h7.2v-1.8H0zm9.6 0v1.8h7.2v-1.8H9.6zm9.6 0v1.8H24v-1.8h-4.8zM0 17.7v1.8h7.2v-1.8H0zm9.6 0v1.8h7.2v-1.8H9.6zm9.6 0v1.8H24v-1.8h-4.8z" />
+  </svg>
+);
+
+const UniskaIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = ({ size = 22, style }) => (
+  <GraduationCap size={size} style={style} />
+);
+
+const renderCategoryIcon = (categoryName: string, color: string) => {
+  const name = categoryName.toLowerCase();
+  if (name.includes('cisco')) return <CiscoIcon size={22} style={{ color }} />;
+  if (name.includes('telkom')) return <TelkomIcon size={22} style={{ color: '#FF2D20' }} />;
+  if (name.includes('ibm')) return <IBMIcon size={22} style={{ color: '#054ADA' }} />;
+  if (name.includes('academic') || name.includes('university') || name.includes('uniska')) return <UniskaIcon size={22} style={{ color }} />;
+  return <Shield size={22} style={{ color }} />;
+};
+
 const renderBrandIcon = (skillName: string) => {
   const name = skillName.toLowerCase();
   if (name.includes('laravel')) return <LaravelIcon size={14} />;
@@ -101,7 +134,8 @@ export const App: React.FC = () => {
   });
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text-primary)', position: 'relative' }}>
+    <div style={{ minHeight: '100vh', background: 'transparent', color: 'var(--text-primary)', position: 'relative' }}>
+      <div className="grid-bg-overlay" />
       
       {/* HEADER & NAV */}
       <header style={{
@@ -677,6 +711,7 @@ export const App: React.FC = () => {
             </div>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '40px' }}>{portfolio.labels.skillsSub}</p>
 
+            {/* Crisp Clean Skills Matrix Grid */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
               
               <div className="glass-panel" style={{ padding: '24px' }}>
@@ -686,7 +721,7 @@ export const App: React.FC = () => {
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {portfolio.skills.webDev.map(s => (
-                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(0,243,255,0.08)', border: '1px solid rgba(0,243,255,0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                       {renderBrandIcon(s)}
                       {s}
                     </span>
@@ -701,7 +736,7 @@ export const App: React.FC = () => {
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {portfolio.skills.devops.map(s => (
-                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(0,255,157,0.08)', border: '1px solid rgba(0,255,157,0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(52, 211, 153, 0.08)', border: '1px solid rgba(52, 211, 153, 0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                       {renderBrandIcon(s)}
                       {s}
                     </span>
@@ -716,7 +751,7 @@ export const App: React.FC = () => {
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {portfolio.skills.networking.map(s => (
-                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(255,183,3,0.08)', border: '1px solid rgba(255,183,3,0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(251, 191, 36, 0.08)', border: '1px solid rgba(251, 191, 36, 0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                       {renderBrandIcon(s)}
                       {s}
                     </span>
@@ -731,7 +766,7 @@ export const App: React.FC = () => {
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {portfolio.skills.ftth.map(s => (
-                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(0,243,255,0.08)', border: '1px solid rgba(0,243,255,0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <span key={s} style={{ padding: '6px 12px', borderRadius: 'var(--radius-sm)', background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.2)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                       {renderBrandIcon(s)}
                       {s}
                     </span>
@@ -777,8 +812,8 @@ export const App: React.FC = () => {
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>Verified credentials from Cisco, Telkom Akses, IBM & Universities. Click any certificate to preview official document.</p>
           </div>
 
-          {/* Grid Layout Showing All Certificate Categories & Items Upfront */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '24px' }}>
+          {/* Full Width Stacked Category Blocks Layout */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '100%' }}>
             {portfolio.groupedCertifications.map((group, idx) => (
               <motion.div
                 key={idx}
@@ -786,48 +821,103 @@ export const App: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
+                whileHover={{ borderColor: group.color, boxShadow: `0 0 25px ${group.color}22` }}
                 className="glass-panel"
                 style={{
                   padding: '24px',
                   borderLeft: `5px solid ${group.color}`,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '16px'
+                  gap: '16px',
+                  height: 'fit-content',
+                  transition: 'all 0.3s ease'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <Shield size={20} style={{ color: group.color }} />
+                    {renderCategoryIcon(group.category, group.color)}
                     <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)' }}>{group.category}</h3>
                   </div>
-                  <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', padding: '2px 8px', borderRadius: '4px', background: 'var(--surface-hover)', color: group.color, border: '1px solid var(--border)' }}>
+                  <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', padding: '4px 10px', borderRadius: '4px', background: 'var(--surface-hover)', color: group.color, border: '1px solid var(--border)', fontWeight: 600 }}>
                     {group.certs.length} Items
                   </span>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {/* Horizontal Scrollable Certificate Cards */}
+                <div style={{
+                  display: 'flex',
+                  gap: '16px',
+                  overflowX: 'auto',
+                  paddingBottom: '12px',
+                  scrollSnapType: 'x mandatory'
+                }} className="custom-scroll">
                   {group.certs.map((cert, cIdx) => (
                     <motion.div
                       key={cIdx}
-                      whileHover={{ scale: 1.01, translateX: 4, borderColor: group.color }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ scale: 1.03, translateY: -4, borderColor: group.color, boxShadow: `0 8px 25px ${group.color}33` }}
+                      whileTap={{ scale: 0.97 }}
                       onClick={() => setLightboxImg(cert.pdf)}
                       style={{
-                        padding: '10px 14px',
+                        minWidth: '260px',
+                        width: '260px',
+                        scrollSnapAlign: 'start',
                         background: 'var(--surface-hover)',
                         border: '1px solid var(--border)',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 'var(--radius-md)',
                         cursor: 'pointer',
+                        overflow: 'hidden',
                         display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        transition: 'all 0.2s ease'
+                        flexDirection: 'column',
+                        transition: 'all 0.25s ease'
                       }}
                     >
-                      <span style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)' }}>{cert.name}</span>
-                      <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: group.color, flexShrink: 0, marginLeft: '12px', fontWeight: 700 }}>
-                        VIEW &rarr;
-                      </span>
+                      {/* Certificate Full Image Cover */}
+                      <div style={{
+                        width: '100%',
+                        height: '160px',
+                        background: '#07080d',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        borderBottom: '1px solid var(--border)'
+                      }}>
+                        <img
+                          src={cert.pdf.startsWith('/') || cert.pdf.startsWith('http') ? cert.pdf : `./${cert.pdf}`}
+                          alt={cert.name}
+                          loading="lazy"
+                          decoding="async"
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                        <div style={{
+                          position: 'absolute',
+                          bottom: '6px',
+                          right: '6px',
+                          background: 'rgba(0,0,0,0.75)',
+                          padding: '2px 6px',
+                          borderRadius: '4px',
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.65rem',
+                          color: group.color,
+                          fontWeight: 700
+                        }}>
+                          PREVIEW &rarr;
+                        </div>
+                      </div>
+
+                      {/* Certificate Title */}
+                      <div style={{ padding: '12px', flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+                        <span style={{
+                          fontSize: '0.85rem',
+                          fontWeight: 600,
+                          color: 'var(--text-primary)',
+                          lineHeight: '1.3',
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden'
+                        }}>
+                          {cert.name}
+                        </span>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
@@ -879,74 +969,111 @@ export const App: React.FC = () => {
             }}
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.85, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.85, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
               style={{
                 position: 'relative',
-                maxWidth: '850px',
-                width: '100%',
-                height: '80vh',
-                background: '#111',
-                border: '1px solid var(--accent-cyan)',
-                boxShadow: '0 0 40px rgba(0, 243, 255, 0.3)',
-                overflow: 'hidden'
+                maxWidth: '900px',
+                width: '95%',
+                maxHeight: '90vh',
+                background: 'linear-gradient(145deg, #141622 0%, #0d0e17 100%)',
+                border: '1px solid rgba(0, 243, 255, 0.4)',
+                borderRadius: '16px',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 243, 255, 0.15)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column'
               }}
             >
-              {lightboxImg.toLowerCase().endsWith('.pdf') ? (
-                <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
+              {/* Paper Certificate Header Bar */}
+              <div style={{
+                padding: '14px 20px',
+                background: 'rgba(18, 20, 32, 0.95)',
+                borderBottom: '1px solid var(--border)',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Award size={18} style={{ color: 'var(--accent-cyan)' }} />
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '0.5px' }}>
+                    CERTIFICATE DOCUMENT PREVIEW
+                  </span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <a
+                    href={lightboxImg.startsWith('/') || lightboxImg.startsWith('http') ? lightboxImg : `./${lightboxImg}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      fontSize: '0.75rem',
+                      color: 'var(--accent-cyan)',
+                      background: 'rgba(0, 243, 255, 0.1)',
+                      border: '1px solid rgba(0, 243, 255, 0.3)',
+                      padding: '4px 10px',
+                      borderRadius: '4px',
+                      textDecoration: 'none',
+                      fontFamily: 'var(--font-mono)',
+                      fontWeight: 600
+                    }}
+                  >
+                    OPEN FILE &rarr;
+                  </a>
+                  <button
+                    onClick={() => setLightboxImg(null)}
+                    style={{
+                      background: 'rgba(255, 75, 75, 0.1)',
+                      border: '1px solid var(--accent-red)',
+                      color: 'var(--accent-red)',
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '6px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      fontSize: '1.1rem',
+                      fontWeight: 700
+                    }}
+                  >
+                    &times;
+                  </button>
+                </div>
+              </div>
+
+              {/* Certificate Paper Frame Content */}
+              <div style={{ flexGrow: 1, padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'auto', background: '#07080c' }}>
+                {lightboxImg.toLowerCase().endsWith('.pdf') ? (
                   <object
-                    data={`${lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}#toolbar=0&navpanes=0`}
+                    data={`${lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}#toolbar=0`}
                     type="application/pdf"
-                    style={{ width: '100%', height: '100%', flexGrow: 1, border: 'none' }}
+                    style={{ width: '100%', height: '70vh', borderRadius: '8px', border: '1px solid var(--border)' }}
                   >
                     <iframe
                       src={`${lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}#toolbar=0`}
                       title="Document Preview"
-                      style={{ width: '100%', height: '100%', border: 'none' }}
+                      style={{ width: '100%', height: '70vh', borderRadius: '8px', border: 'none' }}
                     />
                   </object>
-                  <div style={{ padding: '12px 16px', background: '#0a0a0d', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>PDF Document</span>
-                    <a
-                      href={lightboxImg.startsWith('/') || lightboxImg.startsWith('http') ? lightboxImg : `./${lightboxImg}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{ fontSize: '0.85rem', color: 'var(--accent-cyan)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontWeight: 700 }}
-                    >
-                      BUKA DOKUMEN PDF &rarr;
-                    </a>
+                ) : (
+                  <div style={{
+                    position: 'relative',
+                    background: '#fff',
+                    padding: '12px',
+                    borderRadius: '8px',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+                  }}>
+                    <img
+                      src={lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}
+                      alt="Certificate Preview"
+                      style={{ maxHeight: '72vh', maxWidth: '100%', objectFit: 'contain', display: 'block', borderRadius: '4px' }}
+                    />
                   </div>
-                </div>
-              ) : (
-                <img
-                  src={lightboxImg.startsWith('/') || lightboxImg.startsWith('http') || lightboxImg.startsWith('data:') ? lightboxImg : `./${lightboxImg}`}
-                  alt="Full Preview"
-                  style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
-                />
-              )}
-              <button
-                onClick={() => setLightboxImg(null)}
-                style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  background: '#000',
-                  border: '1px solid var(--accent-red)',
-                  color: 'var(--accent-red)',
-                  width: '32px',
-                  height: '32px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                  fontSize: '1.2rem',
-                  fontWeight: 700,
-                  zIndex: 10
-                }}
-              >
-                &times;
-              </button>
+                )}
+              </div>
             </motion.div>
           </motion.div>
         )}

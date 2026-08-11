@@ -209,43 +209,43 @@ export const PORTFOLIO_DATA: PortfolioData = {
       category: "Cisco Networking Academy",
       color: "var(--accent-cyan)",
       certs: [
-        { name: "CCNA - Enterprise Networking & Security", pdf: "assets/CCNA/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_rudy2310010148-gmail-com_45135a13-4536-4d12-9e51-85cd76c021bc.pdf" },
-        { name: "CCNA - Introduction to Networks", pdf: "assets/CCNA/CCNA-_Introduction_to_Networks_certificate_rudy2310010148-gmail-com_11ede699-5583-4031-b7b7-80dd898c1515.pdf" },
-        { name: "CCNA - Switching & Routing Essentials", pdf: "assets/CCNA/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_rudy2310010148-gmail-com_bd66296d-8ceb-455d-b654-8e3e4c83c8ce.pdf" },
-        { name: "Cisco Network Basics", pdf: "assets/Cisco Network Basics/Networking_Basics_certificate_rudy2310010148-gmail-com_73275acc-a7e6-4f57-8066-b184300188a0.pdf" },
-        { name: "Cisco Cyber Security Essentials", pdf: "assets/Cisco Cyber Security/Introduction_to_Cybersecurity_certificate_rudy2310010148-gmail-com_c6555847-04db-45cf-8f8d-59590e91fef2.pdf" }
+        { name: "CCNA - Enterprise Networking & Security", pdf: "assets/CCNA/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_rudy2310010148-gmail-com_45135a13-4536-4d12-9e51-85cd76c021bc.png" },
+        { name: "CCNA - Introduction to Networks", pdf: "assets/CCNA/CCNA-_Introduction_to_Networks_certificate_rudy2310010148-gmail-com_11ede699-5583-4031-b7b7-80dd898c1515.png" },
+        { name: "CCNA - Switching & Routing Essentials", pdf: "assets/CCNA/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_rudy2310010148-gmail-com_bd66296d-8ceb-455d-b654-8e3e4c83c8ce.png" },
+        { name: "Cisco Network Basics", pdf: "assets/Cisco Network Basics/Networking_Basics_certificate_rudy2310010148-gmail-com_73275acc-a7e6-4f57-8066-b184300188a0.png" },
+        { name: "Cisco Cyber Security Essentials", pdf: "assets/Cisco Cyber Security/Introduction_to_Cybersecurity_certificate_rudy2310010148-gmail-com_c6555847-04db-45cf-8f8d-59590e91fef2.png" }
       ]
     },
     {
       category: "Telkom Akses Certifications",
       color: "var(--accent-emerald)",
       certs: [
-        { name: "Assurance Basic", pdf: "assets/Telkom Akses/Assurance Basic.pdf" },
-        { name: "Provisioning Basic", pdf: "assets/Telkom Akses/Provisioning Basic.pdf" },
-        { name: "Service Deploy Technician", pdf: "assets/Telkom Akses/Serivce Deploy Technician.pdf" },
-        { name: "Indihome 3P Network", pdf: "assets/Telkom Akses/Indihome 3P.pdf" },
-        { name: "K3 Basic & Safety Standards", pdf: "assets/Telkom Akses/K3.pdf" },
-        { name: "Code of Conduct", pdf: "assets/Telkom Akses/Code of Conduct.pdf" },
-        { name: "E-Learning AKHLAK", pdf: "assets/Telkom Akses/E-Learning Akhlak.pdf" },
-        { name: "Effective Communication & Interpersonal Skill", pdf: "assets/Telkom Akses/Efective Communication & Interpersonal Skill.pdf" }
+        { name: "Assurance Basic", pdf: "assets/Telkom Akses/Assurance Basic.png" },
+        { name: "Provisioning Basic", pdf: "assets/Telkom Akses/Provisioning Basic.png" },
+        { name: "Service Deploy Technician", pdf: "assets/Telkom Akses/Serivce Deploy Technician.png" },
+        { name: "Indihome 3P Network", pdf: "assets/Telkom Akses/Indihome 3P.png" },
+        { name: "K3 Basic & Safety Standards", pdf: "assets/Telkom Akses/K3.png" },
+        { name: "Code of Conduct", pdf: "assets/Telkom Akses/Code of Conduct.png" },
+        { name: "E-Learning AKHLAK", pdf: "assets/Telkom Akses/E-Learning Akhlak.png" },
+        { name: "Effective Communication & Interpersonal Skill", pdf: "assets/Telkom Akses/Efective Communication & Interpersonal Skill.png" }
       ]
     },
     {
       category: "IBM Credly Certifications",
       color: "var(--accent-amber)",
       certs: [
-        { name: "Code Generation & Optimization Using IBM", pdf: "assets/IBM/Credly Code Generation and Optimization Using IBM.pdf" },
-        { name: "Data Classification & Security", pdf: "assets/IBM/Data Classification .pdf" }
+        { name: "Code Generation & Optimization Using IBM", pdf: "assets/IBM/Credly Code Generation and Optimization Using IBM.png" },
+        { name: "Data Classification & Security", pdf: "assets/IBM/Data Classification .png" }
       ]
     },
     {
       category: "Academic & University",
       color: "var(--accent-cyan)",
       certs: [
-        { name: "Web Development Practicum 2", pdf: "assets/Praktikum Kampus/Praktikum Pemrograman Web 2.pdf" },
-        { name: "Data Science Certificate", pdf: "assets/Praktikum Kampus/Data Science.pdf" },
-        { name: "Graphic Design Practicum", pdf: "assets/Praktikum Kampus/Praktikum Desain Grafis.pdf" },
-        { name: "Commercial Suite Application Practicum (PPN)", pdf: "assets/Praktikum Kampus/Praktikum Program Paket Niaga (ppn).pdf" }
+        { name: "Web Development Practicum 2", pdf: "assets/Praktikum Kampus/Praktikum Pemrograman Web 2.png" },
+        { name: "Data Science Certificate", pdf: "assets/Praktikum Kampus/Data Science.png" },
+        { name: "Graphic Design Practicum", pdf: "assets/Praktikum Kampus/Praktikum Desain Grafis.png" },
+        { name: "Commercial Suite Application Practicum (PPN)", pdf: "assets/Praktikum Kampus/Praktikum Program Paket Niaga (ppn).png" }
       ]
     }
   ],

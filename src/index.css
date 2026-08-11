@@ -1,16 +1,16 @@
 :root {
   --bg: #090a0f;
-  --surface: #10121b;
-  --surface-hover: #171a27;
-  --border: rgba(0, 243, 255, 0.15);
-  --border-highlight: rgba(0, 243, 255, 0.4);
-  --text-primary: #ffffff;
+  --surface: #11131f;
+  --surface-hover: #181b2c;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 255, 255, 0.2);
+  --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --accent-cyan: #00f3ff;
-  --accent-emerald: #00ff9d;
-  --accent-amber: #ffb703;
-  --accent-red: #ff2a2a;
+  --accent-cyan: #38bdf8;
+  --accent-emerald: #34d399;
+  --accent-amber: #fbbf24;
+  --accent-red: #f87171;
   --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --radius-sm: 8px;
@@ -38,15 +38,52 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  background: #07080c;
 }
 
-/* Subtle Cyberpunk Grid Background */
+/* Ambient Subtle Gradient Background */
 body::before {
   content: "";
   position: fixed;
+  top: -10%; left: 15%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.03) 0%, rgba(99, 102, 241, 0.015) 50%, transparent 75%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -10%; right: 10%;
+  width: 55vw; height: 55vw;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.025) 0%, rgba(56, 189, 248, 0.015) 50%, transparent 75%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5vw, 8vh) scale(1.1); }
+  100% { transform: translate(-3vw, -4vh) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-6vw, -6vh) scale(1.15); }
+  100% { transform: translate(4vw, 5vh) scale(0.9); }
+}
+
+/* Subtle Tech Grid Overlay */
+.grid-bg-overlay {
+  position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-image: radial-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 0);
-  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
   pointer-events: none;
   z-index: 1;
 }
